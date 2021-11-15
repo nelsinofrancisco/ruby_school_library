@@ -1,6 +1,6 @@
 class Person
-  def initialize(name: 'Unknown', age:, parent_permission: true)
-    @id = Random.rand(1..10000)
+  def initialize(age:, name: 'Unknown', parent_permission: true)
+    @id = Random.rand(1..10_000)
     @name = name
     @age = age
     @parent_permission = parent_permission
@@ -15,12 +15,11 @@ class Person
 
   private
 
-  def is_of_age? 
+  # I needed to do this is order to keep the method name required
+  # in the project
+  # rubocop:disable Naming/PredicateName
+  def is_of_age?
     @age >= 18
   end
+  # rubocop:enable Naming/PredicateName
 end
-
-
-person = Person.new(:age => 18, :parent_permission => false);
-
-puts person.can_use_services?
