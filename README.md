@@ -23,7 +23,7 @@ To get a local copy up and running follow these simple example steps.
 - To clone this repo:
   - Open the Terminal(Mac/Linux) or the Cmd (Windows);
   - Navigate to where you want to paste the Repo folder;
-  - Type `git clone https://github.com/nelsinofrancisco/leaderboard.git`;
+  - Type `git clone https://github.com/nelsinofrancisco/ruby_school_library.git`;
   - Open the folder ruby_school_library that was created on your IDE;
   
 ### Run tests
