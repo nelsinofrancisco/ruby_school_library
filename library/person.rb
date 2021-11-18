@@ -23,8 +23,7 @@ class Person
   end
 
   def add_book_rental(date:, book:)
-      Rental.new(date: date, book: book, person: self)
-    end
+    Rental.new(date: date, book: book, person: self)
   end
 
   private

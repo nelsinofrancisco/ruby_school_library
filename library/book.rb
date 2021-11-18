@@ -10,6 +10,6 @@ class Book
   end
 
   def rent(date:, person:)
-    Rental.new(date: data, book: self, person: person)
+    Rental.new(date: date, book: self, person: person)
   end
 end
