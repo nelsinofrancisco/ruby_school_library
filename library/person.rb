@@ -11,7 +11,7 @@ class Person
     @rentals = []
   end
 
-  attr_accessor :name, :age
+  attr_accessor :name, :age, :rentals
   attr_reader :id
 
   def can_use_services?
@@ -22,13 +22,8 @@ class Person
     @name = @corrector.correct_name(@name)
   end
 
-  def add_rental(date:, book:, rental: nil)
-    if rental
-      @rentals.push(rental)
-    else
-      new_rental = Rental.new(date: date, book: book, person: self)
-      book.rent(rental: new_rental)
-      @rentals.push(new_rental)
+  def add_rental(date:, book:)
+      Rental.new(date: date, book: book, person: self)
     end
   end
 

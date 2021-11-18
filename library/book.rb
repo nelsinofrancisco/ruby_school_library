@@ -1,8 +1,7 @@
 require './rental'
 
 class Book
-  attr_accessor :title, :author
-  attr_reader :rentals
+  attr_accessor :title, :author, :rentals
 
   def initialize(title:, author:)
     @title = title
@@ -10,13 +9,7 @@ class Book
     @rentals = []
   end
 
-  def rent(date:, person:, rental: nil)
-    if rental
-      @rentals.push(rental)
-    else
-      new_rental = Rental.new(date: date, book: self, person: person)
-      person.add_book(rental: new_rental)
-      @rentals.push(new_rental)
-    end
+  def rent(date:, person:)
+    Rental.new(date: data, book: self, person: person)
   end
 end
