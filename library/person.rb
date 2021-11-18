@@ -23,7 +23,7 @@ class Person
   end
 
   def add_rental(date:, book:, rental: nil)
-    if rental 
+    if rental
       @rentals.push(rental)
     else
       new_rental = Rental.new(date: date, book: book, person: self)

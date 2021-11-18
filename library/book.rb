@@ -1,4 +1,4 @@
-require './rental.rb'
+require './rental'
 
 class Book
   attr_accessor :title, :author
@@ -11,7 +11,7 @@ class Book
   end
 
   def rent(date:, person:, rental: nil)
-    if rental 
+    if rental
       @rentals.push(rental)
     else
       new_rental = Rental.new(date: date, book: self, person: person)

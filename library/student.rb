@@ -1,9 +1,9 @@
 require_relative './person'
 
 class Student < Person
-  def initialize(age:, classroom:, name: 'Unknown', parent_permission: true, classroom: [])
+  def initialize(age:, name: 'Unknown', parent_permission: true)
     super(name: name, age: age, parent_permission: parent_permission)
-    @classroom = classroom
+    @classroom = []
   end
 
   def play_hooky
@@ -11,11 +11,11 @@ class Student < Person
   end
 
   def add_class(classroom)
-    if !@classroom.include?(classroom)
+    if @classroom.include?(classroom)
+      puts 'Student already enrolled in classroom'
+    else
       classroom.add_student(self)
       @classroom.push(classroom)
-    else
-      puts 'Student already enrolled in classroom'
     end
   end
 end
