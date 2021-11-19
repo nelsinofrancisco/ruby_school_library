@@ -136,12 +136,12 @@ end
 # rubocop:disable Metrics/CyclomaticComplexity
 def main
   puts 'Welcome to School Library App!'
-  run_app = true
+  response = 0
   app = Library.new
-  while run_app
+  while response != 7
     menu
     response = gets.chomp.to_i
-    case response.positive?
+    case response
     when 1
       app.list_books
     when 2
@@ -156,7 +156,6 @@ def main
       app.rental_by_id
     when 7
       puts 'Thank you for using the school library app'
-      run_app = false
     else
       puts "This isn't a valid option, please try again.\n\n"
     end
