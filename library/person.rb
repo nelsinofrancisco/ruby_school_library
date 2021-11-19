@@ -1,5 +1,5 @@
-require './corrector'
-require './rentals'
+require_relative './corrector'
+require_relative './rental'
 
 class Person
   def initialize(age:, name: 'Unknown', parent_permission: true)
@@ -36,11 +36,3 @@ class Person
   end
   # rubocop:enable Naming/PredicateName
 end
-
-test = Person.new(name: 'zezinhotemumnomemuitogrande', age: 18)
-
-puts test.name
-
-test.validate_name
-
-puts test.name
